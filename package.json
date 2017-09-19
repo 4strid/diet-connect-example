@@ -1,0 +1,27 @@
+{
+  "name": "diet-connect-example",
+  "version": "1.0.0",
+  "description": "An example website",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cutejs/diet-connect-example.git"
+  },
+  "author": "Peter Fesz-Nguyen",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/cutejs/diet-connect-example/issues"
+  },
+  "homepage": "https://github.com/cutejs/diet-connect-example#readme",
+  "dependencies": {
+    "connect-static": "^1.5.2",
+    "diet": "^0.16.0",
+    "diet-connect": "^1.0.1",
+    "express-nedb-session": "^0.1.1",
+    "express-session": "^1.15.5",
+    "morgan": "^1.8.2"
+  }
+}
