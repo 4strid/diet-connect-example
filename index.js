@@ -4,18 +4,13 @@ var compatible = require('diet-connect');
 
 // random assortment of middleware
 var logger = require('morgan');
-var createStatic = require('connect-static');
+var createStatic = require('connect-static'); // also works with express-static
 var session = require('express-session');
 var SessionStore = require('express-nedb-session')(session);
 
 function main () {
     var app = server()
 	app.listen('http://localhost:8080')
-
-	app.header(compatible(function (req, res, next) {
-		console.log(req.url);
-		next();
-	}));
 
 	app.header(compatible(logger('dev')));
 
@@ -37,13 +32,15 @@ function main () {
 		app.footer(compatible(static));
 	});
 
-	app.get('/test', function ($) {
+	// (taken from express session examples)
+	// refresh the page to see the counter go up
+	app.get('/counter', function ($) {
 		if ($.session.views) {
 			$.session.views++;
-			$.end('' + $.session.views);
+			$.end('you have viewed this page ' + $.session.views + ' times')
 		} else {
 			$.session.views = 1;
-			$.end('welcome to the jungle');
+			$.end('you are viewing this page for the first time');
 		}
 	});
 }
