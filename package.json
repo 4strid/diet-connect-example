@@ -19,10 +19,8 @@
   "dependencies": {
     "connect-static": "^1.5.2",
     "diet": "^0.16.0",
-    "diet-connect": "^1.0.1",
-    "express-nedb-session": "^0.1.1",
+    "diet-connect": "^1.2.0",
     "express-session": "^1.15.5",
-    "express-static": "^1.2.4",
     "morgan": "^1.8.2"
   }
 }
